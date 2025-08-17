@@ -23,7 +23,7 @@ def get_registered_user():
 
 
 producer = KafkaProducer(
-    bootstrap_servers=['localhost:9092'],
+    bootstrap_servers=['localhost:9094'],
     value_serializer = lambda data: json.dumps(data).encode('utf-8')
                          
 )
