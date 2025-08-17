@@ -6,7 +6,7 @@ services:
     container_name: kafka
     ports:
       - "9092:9092"   # internal
-      - "9094:9094"   # external for your Python producer
+      - "9094:9094"   # external for Python producer
     environment:
       - KAFKA_ENABLE_KRAFT=yes
       - KAFKA_CFG_NODE_ID=1
