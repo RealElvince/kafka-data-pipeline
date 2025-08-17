@@ -1,4 +1,6 @@
 from faker import Faker
+import json
+from kafka import KafkaProducer
 
 
 
@@ -19,4 +21,9 @@ def get_registered_user():
         "created_at":fake.year()
     }
 
-    
+
+producer = KafkaProducer(
+    bootstrap_servers='localhost:9092',
+    value_serializer = lambda data: json.dumps(data).encode('utf-8')
+                         
+)
